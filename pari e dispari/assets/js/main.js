@@ -6,9 +6,9 @@ console.log(numeroUtente);
 
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
 function pcRandomNumber(min, max) {
-  return Math.floor((Math.random()*(max-min))+min)+1;
+  return Math.floor(Math.random()*(max-min+1))+min;
 }
-var numeroRandom = Number(pcRandomNumber(0, 5));
+var numeroRandom = Number(pcRandomNumber(1, 5));
 console.log(numeroRandom);
 
 // Sommiamo i due numeri
@@ -16,7 +16,7 @@ var somma = numeroUtente + numeroRandom;
 console.log(somma);
 
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-function evenOrOdd() {
+function evenOrOdd(somma, sceltaUtente) {
   if ((somma % 2 === 0 && sceltaUtente === "pari") || (somma % 2 !== 0 && sceltaUtente === "dispari")) {
     console.log("Hai vinto");
   } else {
@@ -26,4 +26,4 @@ function evenOrOdd() {
 }
 
 // Dichiariamo chi ha vinto.
-var risultato = evenOrOdd();
+var risultato = evenOrOdd(somma, sceltaUtente);
